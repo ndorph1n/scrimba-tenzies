@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCO96gh4_TuyUISp9yg-frW8ubzeIvlDnw",
@@ -14,3 +14,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 export const leadersCollection = collection(db, "leaders");
+export const leadersDocs = await getDocs(leadersCollection);
